@@ -4,7 +4,6 @@ public class testGiocatore {
     public static void main(String[] args) {
         int scelta;
         Scanner in = new Scanner(System.in);
-        Giocatore giocatore= new Giocatore("nome")
         Giocatore[] squadra = new Giocatore[10];
         do {
             System.out.println("scegli tra una di queste funzionalità");
@@ -19,13 +18,22 @@ public class testGiocatore {
             scelta = in.nextInt();
 
         } while (scelta != 0);
-        switch(scelta){
-            case 1 :
+        switch (scelta) {
+            case 1:
                 System.out.println("nome giocatore nuovo:");
 
-                for(int i=0;i< squadra.length;i++){
+                break;
+            case 2:
+                for (int i = 0; i < squadra.length; i++) {
+                    System.out.println(squadra[i]);
+                }
+                break;
+            case 3:
+                System.out.println("");
+                for (int i = 0; i < squadra.length; i++) {
 
                 }
+
         }
     }
 }

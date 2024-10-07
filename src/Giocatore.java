@@ -61,10 +61,9 @@ public class Giocatore {
 
     public void setGol(int gol) {
         this.gol = gol;
-        if(gol<0){
+        if (gol < 0) {
 
-        }
-        else{
+        } else {
             setGol(gol);
         }
     }
