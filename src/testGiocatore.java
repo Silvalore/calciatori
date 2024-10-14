@@ -2,9 +2,13 @@ import java.util.Scanner;
 
 public class testGiocatore {
     public static void main(String[] args) {
-        int scelta;
+        int scelta=0;
         Scanner in = new Scanner(System.in);
-        Giocatore[] squadra = new Giocatore[10];
+        Giocatore[] squadra = new Giocatore[100];
+        int indice = 0;
+        int goal;
+        String nome;
+        Boolean capitano;
         do {
             System.out.println("scegli tra una di queste funzionalità");
             System.out.println("1: aggiungere un giocatore alla squadra, controllando che non ci sia più di un capitano");
@@ -17,23 +21,38 @@ public class testGiocatore {
             System.out.println("0: fine");
             scelta = in.nextInt();
 
+
+            switch (scelta) {
+                case 1:
+                    System.out.println("dammi numero goal");
+                    goal = in.nextInt();
+                    in.nextLine();
+                    System.out.println("dammi nome");
+                    nome = in.nextLine();
+                    in.nextLine();
+                    System.out.println("dimmi se è capitano");
+                    capitano = in.nextBoolean();
+                    in.nextLine();
+                    aggiuntaGiocatore(goal, nome, capitano, indice);
+                    indice++;
+                    break;
+
+                break;
+                case 2:
+                    for (int i = 0; i < squadra.length; i++) {
+                        System.out.println(squadra[i]);
+                    }
+                    break;
+                case 3:
+                    System.out.println("");
+                    for (int i = 0; i < squadra.length; i++) {
+
+                    }
+
+            }
         } while (scelta != 0);
-        switch (scelta) {
-            case 1:
-                System.out.println("nome giocatore nuovo:");
-
-                break;
-            case 2:
-                for (int i = 0; i < squadra.length; i++) {
-                    System.out.println(squadra[i]);
-                }
-                break;
-            case 3:
-                System.out.println("");
-                for (int i = 0; i < squadra.length; i++) {
-
-                }
-
+        public static void aggiuntaGiocatore( int nuovoGol, String nuovoNome, Boolean newCapitano,int indice){
+            squadra[indice] = new Giocatore(newGoal, newNome, newCapitano);
         }
     }
 }
